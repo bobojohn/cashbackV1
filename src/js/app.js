@@ -6,8 +6,9 @@ const ONE_PERCENT  = 0.01;
 const FIVE_PERCENT = 0.05;
 const THIRTEEN_PERCENT = 0.3;
 let cashback = 0;
+const LIMIT_CASHBACK = 3000;
 
-const PURCHASES = [
+const purchases = [
     {
          amount:1000,
          category:REGULAR_CATEGORY,
@@ -22,16 +23,15 @@ const PURCHASES = [
     },            
 ];
 
- for (const PURCHASE of PURCHASES){
-     if (PURCHASE.category === REGULAR_CATEGORY) {
-          cashback += PURCHASE.amount * ONE_PERCENT;
-        }else if(PURCHASE.category ===INCREASED_CATEGORY){
-          cashback += PURCHASE.amount * FIVE_PERCENT;
-        }else if(PURCHASE.category ===SPECIAL_CATEGORY){
-          cashback += PURCHASE.amount *THIRTEEN_PERCENT
+ for (const purchase of purchases){
+     if (purchase.category === REGULAR_CATEGORY) {
+          cashback += purchase.amount * ONE_PERCENT;
+        }else if(purchase.category ===INCREASED_CATEGORY){
+          cashback += purchase.amount * FIVE_PERCENT;
+        }else if(purchase.category ===SPECIAL_CATEGORY){
+          cashback += purchase.amount *THIRTEEN_PERCENT
         }
  }
- const LIMIT_CASHBACK = 3000;
  if(cashback > LIMIT_CASHBACK){
      cashback=LIMIT_CASHBACK
 }
